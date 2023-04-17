@@ -1,0 +1,12 @@
+
+ type Query {
+    cars: [Car]
+ }
+
+ type Car {
+  id: ID!
+  model: String,
+  weight: Float!
+  color: String
+  brand: String!
+}

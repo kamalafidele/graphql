@@ -1,0 +1,12 @@
+
+ type Query {
+    planes: [Plane]
+ }
+
+ type Plane {
+  id: ID!
+  speed: Float!
+  brand: String!
+  origin: String!
+  name: String
+ }
