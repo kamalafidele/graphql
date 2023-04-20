@@ -1,4 +1,4 @@
-module.exports = [
+const cars = [
     {
         id: '1',
         model: 'Santa fe',
@@ -21,3 +21,11 @@ module.exports = [
         brand: 'Toyota'
     },
 ];
+
+function getAllCars() {
+    return cars;
+}
+
+module.exports = {
+    getAllCars,
+};

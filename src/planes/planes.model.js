@@ -1,4 +1,4 @@
-module.exports = [
+const planes = [
     {
         id: '1',
         speed: 45000,
@@ -21,3 +21,11 @@ module.exports = [
         name: 'Rafale',
     },
 ];
+
+function getAllPlanes() {
+    return planes;
+}
+
+module.exports = {
+    getAllPlanes,
+};

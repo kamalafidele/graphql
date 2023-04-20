@@ -5,7 +5,7 @@
 
  type Car {
   id: ID!
-  model: String,
+  model: String
   weight: Float!
   color: String
   brand: String!

@@ -10,19 +10,15 @@ dotenv.config();
 const app = express();
 
 const types = loadFilesSync(path.join(__dirname, '**/*.graphql'));
+const resolvers = loadFilesSync(path.join(__dirname, '**/*.resolvers.js'));
 
 const schema = makeExecutableSchema({
     typeDefs: types,
+    resolvers: resolvers,
 });
-
-const root = {
-    planes: require('./src/planes/planes.model'),
-    cars: require('./src/cars/cars.model'),
-};
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    rootValue: root,
     graphiql: true,
 }));
 
