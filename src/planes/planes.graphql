@@ -1,6 +1,13 @@
 
  type Query {
     planes: [Plane]
+    planesBySpeed(min: Float!, max: Float!): [Plane]
+    plane(id: ID!): Plane
+ }
+
+ type Mutation {
+   addNewPlane(id: ID!, speed: Float!, brand: String!, origin: String!, name: String): Plane
+   addPlaneReview(planeId: ID!, content: String!, reviewer: String!): Plane
  }
 
  type Plane {
@@ -9,4 +16,10 @@
   brand: String!
   origin: String!
   name: String
+  reviews: [Review]
+ }
+
+ type Review {
+   content: String!
+   reviewer: String!
  }
