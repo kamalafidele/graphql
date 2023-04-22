@@ -2,24 +2,29 @@
  type Query {
     planes: [Plane]
     planesBySpeed(min: Float!, max: Float!): [Plane]
-    plane(id: ID!): Plane
+    plane(id: String!): Plane
  }
 
  type Mutation {
-   addNewPlane(id: ID!, speed: Float!, brand: String!, origin: String!, name: String): Plane
+   addNewPlane(speed: Float!, brand: String!, origin: String!, name: String): Plane
    addPlaneReview(planeId: ID!, content: String!, reviewer: String!): Plane
  }
 
  type Plane {
-  id: ID!
+  _id: String
   speed: Float!
   brand: String!
   origin: String!
   name: String
   reviews: [Review]
+  createdAt: String
+  updateAt: String
  }
 
  type Review {
-   content: String!
-   reviewer: String!
+  _id: String
+  content: String!
+  reviewer: String!
+  createdAt: String
+  updateAt: String
  }
